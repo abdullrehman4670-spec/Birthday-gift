@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+<meta name="theme-color" content="#170026">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,sans-serif;color:#fff;overflow-x:hidden;
+  background:radial-gradient(circle at 50% 0%,#64236f 0,#260044 35%,#080012 85%);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 20% 20%,rgba(255,105,210,.13),transparent 28%),
+             radial-gradient(circle at 80% 35%,rgba(125,90,255,.12),transparent 30%);
+}
+#stars,.hearts{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;animation:twinkle 1.8s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+
+.music{
+  position:fixed;right:18px;top:18px;z-index:100;width:52px;height:52px;border:1px solid #ffffff55;
+  border-radius:50%;background:#ffffff18;color:#fff;font-size:21px;cursor:pointer;backdrop-filter:blur(12px);
+  box-shadow:0 0 25px #ff49c655
+}
+section{position:relative;z-index:2}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 18px 40px}
+.kicker{letter-spacing:5px;text-transform:uppercase;font-size:13px;opacity:.75;margin-bottom:12px}
+h1{
+  font-family:"Great Vibes",cursive;font-size:clamp(72px,14vw,155px);line-height:.85;
+  text-shadow:0 0 15px #ff8de9,0 0 45px #ff29ca,0 0 85px #8d31ff;
+  animation:pulse 2s ease-in-out infinite alternate
+}
+@keyframes pulse{to{filter:brightness(1.25);transform:scale(1.02)}}
+.typing{min-height:62px;margin-top:28px;font-size:clamp(17px,3vw,27px);font-weight:300}
+.cursor{border-right:3px solid #fff;margin-left:3px;animation:blink .7s infinite}
+@keyframes blink{50%{border-color:transparent}}
+
+.cake-wrap{margin-top:48px;filter:drop-shadow(0 20px 30px #0007)}
+.cake{width:230px;height:175px;position:relative}
+.layer{position:absolute;border-radius:15px;background:linear-gradient(#ff9cdb,#c52f9e);box-shadow:inset 0 -8px #8d2475aa,0 10px 25px #0004}
+.bottom{width:205px;height:70px;left:12px;bottom:0}
+.middle{width:180px;height:62px;left:25px;bottom:52px}
+.top{width:150px;height:54px;left:40px;bottom:101px}
+.icing{position:absolute;left:0;right:0;top:0;height:15px;background:#fff;border-radius:0 0 12px 12px}
+.candle{position:absolute;bottom:151px;width:12px;height:48px;border-radius:4px;background:repeating-linear-gradient(45deg,#fff 0 6px,#ff4fae 6px 12px)}
+.candle:nth-child(1){left:73px}.candle:nth-child(2){left:109px}.candle:nth-child(3){left:145px}
+.flame{position:absolute;width:18px;height:27px;left:-3px;top:-25px;border-radius:50% 50% 50% 50%;background:linear-gradient(#fff,#ffd000,#ff6500);box-shadow:0 0 22px #ffae00;animation:flame .45s infinite alternate}
+@keyframes flame{to{transform:scale(1.12) rotate(4deg)}}
+
+.btn{
+  border:0;border-radius:50px;padding:15px 32px;margin-top:45px;color:#fff;font:600 16px Poppins;
+  background:linear-gradient(90deg,#ff35bc,#7c3cff);cursor:pointer;box-shadow:0 0 30px #ff35bc66;
+  transition:.25s
+}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 0 45px #ff35bbaa}
+
+.message{max-width:900px;margin:auto;padding:90px 20px}
+.glass{padding:45px 30px;border:1px solid #ffffff22;border-radius:30px;background:#ffffff0d;backdrop-filter:blur(16px);box-shadow:0 25px 70px #0005;text-align:center}
+.script{font:55px "Great Vibes",cursive;color:#ff9de9;margin-bottom:18px}
+.glass p{font-size:17px;line-height:1.9;color:#f7eefa}
+
+.gallery{padding:70px 18px 100px;text-align:center}
+.title{font:58px "Great Vibes",cursive;color:#ff9de9;margin-bottom:35px}
+.grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  position:relative;overflow:hidden;border-radius:26px;min-height:350px;background:#fff1;
+  border:1px solid #ffffff24;box-shadow:0 20px 50px #0005;transition:.4s
+}
+.card:hover{transform:translateY(-8px) rotate(.4deg);box-shadow:0 30px 70px #ff25bb33}
+.card img,.card video{width:100%;height:100%;min-height:350px;object-fit:cover;display:block}
+.card.tall img{object-position:center}
+.label{
+  position:absolute;left:14px;bottom:14px;padding:8px 14px;border-radius:20px;
+  background:#0008;backdrop-filter:blur(8px);font-size:12px
+}
+.video-card{grid-column:1/-1}
+.video-card video{max-height:650px}
+
+.wish-overlay{
+  position:fixed;inset:0;background:#000b;backdrop-filter:blur(10px);z-index:200;display:none;
+  align-items:center;justify-content:center;padding:20px
+}
+.wish-box{max-width:520px;width:100%;padding:45px 28px;text-align:center;border-radius:30px;background:linear-gradient(135deg,#35105d,#140020);border:1px solid #ffffff25;animation:pop .45s ease}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.wish-box h2{font:60px "Great Vibes",cursive;color:#ff91e5}
+.wish-box p{line-height:1.8;margin:16px 0 25px}
+
+.confetti{position:fixed;top:-20px;width:9px;height:15px;z-index:300;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+.firework{position:fixed;width:1px;height:1px;z-index:250;pointer-events:none}
+.particle{position:absolute;width:5px;height:5px;border-radius:50%;box-shadow:0 0 12px currentColor;animation:explode 1.25s ease-out forwards}
+@keyframes explode{to{transform:translate(var(--x),var(--y)) scale(0);opacity:0}}
+.heart{position:fixed;bottom:-30px;z-index:1;pointer-events:none;animation:heartFloat linear forwards}
+@keyframes heartFloat{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+
+footer{position:relative;z-index:2;text-align:center;padding:45px 20px;color:#d8c6e4;font-size:13px}
+
+@media(max-width:700px){
+  .music{width:46px;height:46px;right:12px;top:12px}
+  .hero{padding-top:90px}
+  .grid{grid-template-columns:1fr}
+  .card,.card img,.card video{min-height:330px}
+  .video-card{grid-column:auto}
+  .glass{padding:35px 20px}
+  .script{font-size:45px}
+  .title{font-size:48px}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<button class="music" id="musicBtn" title="Play music">🎵</button>
+
+<section class="hero">
+  <div class="kicker">A special day for someone special</div>
+  <h1>Happy Birthday</h1>
+  <div class="typing"><span id="typed"></span><span class="cursor"></span></div>
+
+  <div class="cake-wrap">
+    <div class="cake">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="layer bottom"><div class="icing"></div></div>
+      <div class="layer middle"><div class="icing"></div></div>
+      <div class="layer top"><div class="icing"></div></div>
+    </div>
+  </div>
+
+  <button class="btn" onclick="makeWish()">✨ Make a Wish ✨</button>
+</section>
+
+<section class="message">
+  <div class="glass">
+    <div class="script">A Little Birthday Message 💖</div>
+    <p>
+      Today is a celebration of you — your smile, your kindness, your beautiful
+      memories, and all the wonderful moments still waiting for you.
+      <br><br>
+      May this new chapter bring you endless happiness, peaceful days,
+      unforgettable memories and dreams that come true. Keep smiling,
+      keep shining, and always remember how special you are. ❤️
+    </p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="title">Beautiful Memories 📸</div>
+  <div class="grid">
+    <div class="card tall"><img src="photo1.jpeg" alt="Birthday memory 1"><div class="label">A beautiful moment ✨</div></div>
+    <div class="card tall"><img src="photo2.jpg" alt="Birthday memory 2"><div class="label">A sweet memory 💕</div></div>
+    <div class="card tall"><img src="photo3.jpg" alt="Birthday memory 3"><div class="label">Simply beautiful 🖤</div></div>
+    <div class="card tall"><img src="photo4.jpg" alt="Birthday memory 4"><div class="label">A precious smile 🌸</div></div>
+    <div class="card video-card">
+      <video src="memory-video.mp4" controls playsinline preload="metadata"></video>
+      <div class="label">One more memory 🎬</div>
+    </div>
+  </div>
+</section>
+
+<footer>Made with ❤️ specially for your birthday</footer>
+
+<div class="wish-overlay" id="wishOverlay">
+  <div class="wish-box">
+    <h2>✨ Wish Made! ✨</h2>
+    <p>Close your eyes, make your biggest wish, and believe that something wonderful is coming your way. May every dream in your heart find its way to reality. ❤️</p>
+    <button class="btn" onclick="closeWish()">Continue Celebration 🎉</button>
+  </div>
+</div>
+
+<!-- Optional music: put a file named birthday-music.mp3 beside this HTML file -->
+<audio id="music" loop>
+  <source src="birthday-music.wav" type="audio/mpeg">
+</audio>
+
+<script>
+const starBox=document.getElementById("stars");
+for(let i=0;i<120;i++){
+  const s=document.createElement("div"); s.className="star";
+  s.style.left=Math.random()*100+"%"; s.style.top=Math.random()*100+"%";
+  s.style.animationDelay=Math.random()*2+"s"; starBox.appendChild(s);
+}
+
+const lines=[
+  "Wishing you a day filled with magic ✨",
+  "May all your dreams come true 💫",
+  "Keep smiling and keep shining ❤️",
+  "You deserve the happiest birthday! 🎂"
+];
+let li=0,ci=0,del=false;
+function typing(){
+  const t=lines[li];
+  document.getElementById("typed").textContent=t.substring(0,ci);
+  if(!del && ci++>=t.length){del=true;return setTimeout(typing,1700)}
+  if(del && ci--<=0){del=false;li=(li+1)%lines.length;ci=0}
+  setTimeout(typing,del?42:70);
+}
+typing();
+
+const music=document.getElementById("music"), musicBtn=document.getElementById("musicBtn");
+let playing=false;
+musicBtn.onclick=()=>{
+  if(!playing){music.play().then(()=>{playing=true;musicBtn.textContent="🔊"}).catch(()=>alert("Add birthday-music.mp3 to this folder first."))}
+  else{music.pause();playing=false;musicBtn.textContent="🎵"}
+};
+
+function confetti(n=130){
+  for(let i=0;i<n;i++){
+    const c=document.createElement("div"); c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=`hsl(${Math.random()*360},100%,65%)`;
+    c.style.animationDuration=(2+Math.random()*3)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5200);
+  }
+}
+function firework(x,y){
+  const f=document.createElement("div");f.className="firework";f.style.left=x+"px";f.style.top=y+"px";document.body.appendChild(f);
+  for(let i=0;i<38;i++){
+    const p=document.createElement("div");p.className="particle";
+    const a=Math.random()*Math.PI*2,d=60+Math.random()*140;
+    p.style.setProperty("--x",Math.cos(a)*d+"px");p.style.setProperty("--y",Math.sin(a)*d+"px");
+    p.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    f.appendChild(p);
+  }
+  setTimeout(()=>f.remove(),1400);
+}
+function heart(){
+  const h=document.createElement("div");h.className="heart";
+  h.textContent=Math.random()>.5?"❤️":"💖";
+  h.style.left=Math.random()*100+"vw";h.style.fontSize=15+Math.random()*25+"px";
+  h.style.animationDuration=5+Math.random()*5+"s";
+  document.body.appendChild(h);setTimeout(()=>h.remove(),10000);
+}
+setInterval(heart,800);
+
+function makeWish(){
+  document.getElementById("wishOverlay").style.display="flex";
+  confetti(180);
+  for(let i=0;i<9;i++) setTimeout(()=>firework(Math.random()*innerWidth,80+Math.random()*innerHeight*.5),i*280);
+  if(!playing) music.play().then(()=>{playing=true;musicBtn.textContent="🔊"}).catch(()=>{});
+}
+function closeWish(){document.getElementById("wishOverlay").style.display="none"}
+
+window.addEventListener("load",()=>{
+  confetti(80);
+  setTimeout(()=>firework(innerWidth*.25,innerHeight*.25),700);
+  setTimeout(()=>firework(innerWidth*.75,innerHeight*.3),1200);
+});
+</script>
+</body>
+</html>
